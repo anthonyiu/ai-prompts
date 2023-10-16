@@ -99,3 +99,5 @@ const Feed = () => {
 };
 
 export default Feed;
+
+export const revalidate = 10;

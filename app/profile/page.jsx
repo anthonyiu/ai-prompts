@@ -72,3 +72,5 @@ const MyProfile = () => {
 };
 
 export default MyProfile;
+
+export const revalidate = 10;

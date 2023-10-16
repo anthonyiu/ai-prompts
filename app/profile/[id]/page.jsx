@@ -33,3 +33,5 @@ const UserProfile = ({ params }) => {
 };
 
 export default UserProfile;
+
+export const revalidate = 10;

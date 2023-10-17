@@ -138,3 +138,5 @@ const Nav = () => {
 };
 
 export default Nav;
+
+export const revalidate = 10;

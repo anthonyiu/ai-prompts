@@ -77,3 +77,5 @@ const EditPrompt = () => {
 };
 
 export default EditPrompt;
+
+export const revalidate = 10;

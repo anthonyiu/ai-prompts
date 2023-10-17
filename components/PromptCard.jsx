@@ -94,3 +94,5 @@ const PromptCard = ({ post, handleEdit, handleDelete, handleTagClick }) => {
 };
 
 export default PromptCard;
+
+export const revalidate = 10;

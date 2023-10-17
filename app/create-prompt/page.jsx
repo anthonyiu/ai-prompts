@@ -56,3 +56,5 @@ const CreatePrompt = () => {
 };
 
 export default CreatePrompt;
+
+export const revalidate = 10;

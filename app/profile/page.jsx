@@ -7,6 +7,7 @@ import Loader from "@components/Loader";
 import Profile from "@components/Profile";
 
 const MyProfile = () => {
+  const [myPosts, setMyPosts] = useState([]);
   const router = useRouter();
   const { data: session, status } = useSession({
     required: true,
@@ -18,8 +19,6 @@ const MyProfile = () => {
   if (status === "loading") {
     return <Loader />;
   }
-
-  const [myPosts, setMyPosts] = useState([]);
 
   useEffect(() => {
     const fetchPosts = async () => {

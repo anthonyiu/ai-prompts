@@ -8,18 +8,17 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       </h1>
       <p className="desc text-left">{desc}</p>
 
-      {data && (
-        <div className="mt-10 prompt_layout">
-          {data.map((post) => (
-            <PromptCard
-              key={post._id}
-              post={post}
-              handleEdit={() => handleEdit && handleEdit(post)}
-              handleDelete={() => handleDelete && handleDelete(post)}
-            />
-          ))}
-        </div>
-      )}
+      <div className="mt-10 prompt_layout">
+        {data.map((post) => (
+          <PromptCard
+            key={post._id}
+            post={post}
+            handleEdit={() => handleEdit && handleEdit(post)}
+            handleDelete={() => handleDelete && handleDelete(post)}
+          />
+        ))}
+      </div>
+
       {data.length === 0 && (
         <div>
           There is no prompt created by {name === "My" ? "you" : name}. Create
@@ -31,3 +30,5 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
 };
 
 export default Profile;
+
+export const revalidate = 10;

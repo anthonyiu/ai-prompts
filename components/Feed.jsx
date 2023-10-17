@@ -29,13 +29,18 @@ const Feed = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const fetchPosts = async () => {
-    setIsLoading(true);
+    try {
+      setIsLoading(true);
 
-    const response = await fetch("/api/prompt");
-    const data = await response.json();
+      const response = await fetch("/api/prompt");
+      const data = await response.json();
 
-    setAllPosts(data);
-    setIsLoading(false);
+      setAllPosts(data);
+    } catch (error) {
+      return new Response("Failed to retrieve posts");
+    } finally {
+      setIsLoading(false);
+    }
   };
 
   useEffect(() => {

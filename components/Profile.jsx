@@ -20,11 +20,10 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
           ))}
         </div>
       )}
-
-      {!data && (
+      {data.length === 0 && (
         <div>
-          There is no prompt created by {name === "My" ? "you" : name}. Try to
-          create one and refresh the page.
+          There is no prompt created by {name === "My" ? "you" : name}. Create
+          one and refresh the page.
         </div>
       )}
     </section>

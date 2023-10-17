@@ -78,7 +78,7 @@ body {
 /* Tailwind Styles */
 
 .app {
-  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6;
+  @apply relative z-10 flex justify-center items-center flex-col max-w-7xl mx-auto sm:px-16 px-6  pb-16;
 }
 
 .black_btn {
@@ -127,7 +127,7 @@ body {
 
 /* Feed Component */
 .feed {
-  @apply mt-16 px-4 pb-16 sm:px-6 lg:px-8 w-full flex justify-center items-center flex-col gap-2;
+  @apply mt-16 px-4 sm:px-6 lg:px-8 w-full flex justify-center items-center flex-col gap-2;
 }
 
 /* Form Component */

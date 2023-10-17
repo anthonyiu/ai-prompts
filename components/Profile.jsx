@@ -8,16 +8,25 @@ const Profile = ({ name, desc, data, handleEdit, handleDelete }) => {
       </h1>
       <p className="desc text-left">{desc}</p>
 
-      <div className="mt-10 prompt_layout">
-        {data.map((post) => (
-          <PromptCard
-            key={post._id}
-            post={post}
-            handleEdit={() => handleEdit && handleEdit(post)}
-            handleDelete={() => handleDelete && handleDelete(post)}
-          />
-        ))}
-      </div>
+      {data && (
+        <div className="mt-10 prompt_layout">
+          {data.map((post) => (
+            <PromptCard
+              key={post._id}
+              post={post}
+              handleEdit={() => handleEdit && handleEdit(post)}
+              handleDelete={() => handleDelete && handleDelete(post)}
+            />
+          ))}
+        </div>
+      )}
+
+      {!data && (
+        <div>
+          There is no prompt created by {name === "My" ? "you" : name}. Try to
+          create one and refresh the page.
+        </div>
+      )}
     </section>
   );
 };
